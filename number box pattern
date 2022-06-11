@@ -1,0 +1,42 @@
+//printing number block patterns
+//input constrain 1<x<10
+#include<stdio.h>
+int x;
+void left_block(int times)
+{
+    int i,j=(2*x-1);
+    for(i=0;i<times;i++)
+        printf("%d ",x-i);
+}
+void mid_block(int num)
+{
+    int i,j=((2*num)-1);
+    for(i=0;i<j;i++)
+        printf("%d ",num);  
+}
+void right_block(int times)
+{
+    int i,j=(2*x-1);
+    for(i=(times-1);i>=0;i--)
+        printf("%d ",x-i);
+    printf("\n");
+}
+int main()
+{
+   printf("enter the number: ");
+   scanf("%d",&x);
+   int a;
+   for(a=0;a<x;a++)
+   {
+       left_block(a);
+       mid_block(x-a);
+       right_block(a);
+   }
+   for(a=(x-2);a>=0;a--)
+   {
+       left_block(a);
+       mid_block(x-a);
+       right_block(a);
+   }
+   return 0;
+}
